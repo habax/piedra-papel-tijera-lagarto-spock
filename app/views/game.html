@@ -1,0 +1,54 @@
+<div class="row">
+	<div class="col-xs-12">
+		<button type="button" class="btn btn-success btn-lg btn-block"
+		ng-class="{ 'disabled':!gameFinish}"
+		ng-click="newGame()"
+		>Nuevo</button>
+	</div>
+</div>
+
+<!-- -->
+<div class="row theGame">
+	<div class="col-xs-4 col-md-2 col-md-offset-2 player text-center"> 
+		<h3>Tu</h3>
+		<div class="btn-group btn-group-vertical" role="group" aria-label="...">
+		  <div class="btn-group" role="group" ng-repeat="op in options">
+		    <button type="button" 
+		    	class="btn btn-default" 
+		    	ng-class="{ 'active':selections.user==op.op }"
+		    	ng-click="setOption(op.op)">
+		    	<img src="{{op.icon}}" class="img-responsive img-center" alt="Responsive image">
+		    	{{op.op}}
+		    </button>
+		  </div> 
+		</div>
+	</div>	
+	<div class="col-xs-4 result text-center"> 
+		&nbsp;
+		<div  ng-if="gameFinish == true" class="bg-{{selections.resClass}}">		
+			<span ng-show="selections.resClass == 'success'" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+			<span ng-show="selections.resClass == 'danger'" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+			<p>
+		  		{{selections.user}}
+		  	</p>
+		  	<p>
+		  		<b>{{selections.result}}</b>
+		  	</p>
+		  	<p>
+		  		{{selections.compu}}
+		  	</p>
+		</div>
+	</div>
+	<div class="col-xs-4 col-md-2 opponent text-center"> 
+		<h3>La Compu</h3>
+		<div class="btn-group btn-group-vertical" role="group" aria-label="...">
+		  <div class="btn-group" role="group" ng-repeat="op in options">
+		    <button type="button" class="btn btn-default"
+		    	ng-class="{ 'active':selections.compu==op.op }">
+			    <img src="{{op.icon}}" class="img-responsive img-center" alt="Responsive image">
+			    {{op.op}}
+			</button>
+		  </div> 
+		</div>
+	</div>
+</div>

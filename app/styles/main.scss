@@ -1,0 +1,87 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+
+$bk-principal: #333465;
+$bk-secundary: #BDCBD4;
+
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.modal {
+  background-color: $bk-secundary; 
+  /*
+  .modal-header {
+    button{
+      &.close{
+        color: $bk-secundary;
+      }
+    }
+  }
+  */
+  .modal-content {
+    background-color: $bk-principal;  
+  }
+
+  
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: $bk-secundary;
+  background-image: url("../images/piedra-papel-tijera-lagarto-spock-pics.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+
+body {
+  background-color: $bk-principal;
+  color: white;   
+
+  .theGame {
+    .player, .opponent {
+        button {
+          img {
+            max-width: 50%;        
+          }
+        }
+    }
+
+    .result {
+      color: black;
+    }
+
+    .jumbotron {
+      background-image: none;
+    }
+  }
+}
+
+.img-center {margin:0 auto;}
+
+nav img {
+  max-height: 50px;
+}
+
